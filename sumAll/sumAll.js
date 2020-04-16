@@ -1,8 +1,8 @@
 const sumAll = function(start, end) {
-  if (start < 0 || end < 0 || +start !== start || +end !== end) {
+  if (isNotValidInput(start,end)) {
     return 'ERROR';
   }
-
+  
   let range = [start, end];
   if (start > end) {
     range.reverse();
@@ -14,6 +14,12 @@ const sumAll = function(start, end) {
   }
   
   return sum;
+}
+
+function isNotValidInput(start,end) {
+  if (start < 0 || end < 0 || +start !== start || +end !== end) {
+    return true;
+  }
 }
 
 module.exports = sumAll
