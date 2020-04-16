@@ -1,11 +1,11 @@
-const removeFromArray = function(array) {
-  for (let i = 0; i < arguments.length; i++) {
-    array.forEach((currentLetter, index) => {
-      if (currentLetter === arguments[i]) {
+const removeFromArray = function(array, ...elements) {
+  elements.forEach(toRemove => {
+    array.forEach((currentElement, index) => {
+      if (currentElement === toRemove) {
         array.splice(index, 1);
       }
     });
-  }
+  });
   
   return array;
 }
